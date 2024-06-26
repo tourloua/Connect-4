@@ -55,6 +55,7 @@ def DrawScreen(turn_count, top_list):
     print("Press Space to exit")
 
 def GetUserInput(symbol, top_list, userposition, SlotList):
+    global win_flag
     global turn_count  
     while True:
         key = readchar.readkey()
@@ -185,6 +186,8 @@ def main(SlotList):
                 SlotList.clear()
                 for k in range(0, 42):
                     SlotList.append(Slot((k % 7), (k // 7), " "))
+            else:
+                win_flag==0
 
 
         if win_flag == 1:
@@ -198,6 +201,8 @@ def main(SlotList):
                 SlotList.clear()
                 for k in range(0, 42):
                     SlotList.append(Slot((k % 7), (k // 7), " "))
+            else:
+                win_flag==1
         if win_flag == 2:
             print("Player 2 won!\n Would you like to play again?\ny/n")
             if readchar.readkey() == "n":
@@ -209,5 +214,8 @@ def main(SlotList):
                 SlotList.clear()
                 for k in range(0, 42):
                     SlotList.append(Slot((k % 7), (k // 7), " ")) 
+            else:
+                win_flag==2
 
 main(SlotList)
+
