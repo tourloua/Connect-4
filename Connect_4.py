@@ -175,7 +175,7 @@ def main(SlotList):
             CheckVertical(SlotList, turn_count, top_list)
             CheckDiagonalLeft(SlotList, turn_count, top_list)
             CheckDiagonalRight(SlotList, turn_count, top_list)
-        if turn_count==42 and win_flag==0:
+        while turn_count==42 and win_flag==0:
             print("Tie game!\n Would you like to play again?\ny/n")
             if readchar.readkey() == "n":
                 exit()
