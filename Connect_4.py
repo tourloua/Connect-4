@@ -190,7 +190,7 @@ def main(SlotList):
                 win_flag==0
 
 
-        if win_flag == 1:
+        while win_flag == 1:
             print("Player 1 won!\n Would you like to play again?\ny/n")
             if readchar.readkey() == "n":
                 exit()
@@ -203,7 +203,7 @@ def main(SlotList):
                     SlotList.append(Slot((k % 7), (k // 7), " "))
             else:
                 win_flag==1
-        if win_flag == 2:
+        while win_flag == 2:
             print("Player 2 won!\n Would you like to play again?\ny/n")
             if readchar.readkey() == "n":
                 exit()
