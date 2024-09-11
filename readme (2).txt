@@ -2,4 +2,6 @@ You need to go into your terminal and write
 
 pip install readchar
 
-symbol takes a while to change between turns, but this doesn't change game logic
+symbol will only change between turns if you move the character left or right. Very elusive bug, does not change gameplay, so I left it in.
+
+Game is case sensitive btw
