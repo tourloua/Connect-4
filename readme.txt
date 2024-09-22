@@ -1,6 +1,8 @@
-You need to go into your terminal and write
+Remake of the popular game "Connect-4" in Python. Meant to be played by two players. Use the left and right keys to move your piece around. Use the down key to place your piece. Space bar exits the program.
 
-pip install readchar
+Very minimalist design. All gameplay occurs in the terminal. 
+
+Libraries used: os and readchar
 
 CHANGELOG 09-22-2024
 game is no longer case sensitive
