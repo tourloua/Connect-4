@@ -213,9 +213,9 @@ def main(SlotList):
                 win_flag==1
         while win_flag == 2:
             print("Player 2 won!\n Would you like to play again?\ny/n")
-            if readchar.readkey() == "n":
+            if readchar.readkey() == "n" or readchar.readkey() == "N":
                 exit()
-            elif readchar.readkey() == "y":
+            elif readchar.readkey() == "y" or readchar.readkey() == "Y":
                 turn_count = 0
                 win_flag = 0
                 userposition=3
@@ -225,4 +225,3 @@ def main(SlotList):
             else:
                 win_flag==2
 main(SlotList)
-
