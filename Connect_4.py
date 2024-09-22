@@ -34,14 +34,23 @@ def FindLowest(userposition, SlotList, symbol):
         return SlotList
     for j in range(0, 42):
         if SlotList[j].x == userposition and SlotList[j].y == lowest:
-            SlotList[j].symbol = symbol
+            
             turn_count += 1  # Increment turn count when a piece is placed
+
+            SlotList[j].symbol = symbol
             break
     return SlotList
 
 def DrawScreen(turn_count, top_list):
     top_string = ""
     print("Player:", ((turn_count % 2) + 1), "        turn:", turn_count)
+    i=0
+    while top_list[i]==' ':
+        i=i+1
+    if turn_count%2==0 and top_list[i]=='O':
+        top_list[i]='X'
+    if turn_count%2==1 and top_list[i]=='X':
+        top_list[i]='O'
     for k in range(0, 29):
         top_string += top_list[k]
     print(top_string)
@@ -60,7 +69,10 @@ def GetUserInput(symbol, top_list, userposition, SlotList):
     while True:
         key = readchar.readkey()
         if key == readchar.key.DOWN:
+            top_list[userposition * 4 + 2] = symbol
             SlotList = FindLowest(userposition, SlotList, symbol)
+            
+            top_list[userposition * 4 + 2] = symbol
             break
         elif key == readchar.key.RIGHT:
             top_list[userposition * 4 + 2] = " "
@@ -171,10 +183,6 @@ def main(SlotList):
             if turn_count >9:
                 CheckDiagonalLeft(SlotList, turn_count, top_list)
                 CheckDiagonalRight(SlotList, turn_count, top_list)
-            CheckHorizontal(SlotList, turn_count, top_list)
-            CheckVertical(SlotList, turn_count, top_list)
-            CheckDiagonalLeft(SlotList, turn_count, top_list)
-            CheckDiagonalRight(SlotList, turn_count, top_list)
         while turn_count==42 and win_flag==0:
             print("Tie game!\n Would you like to play again?\ny/n")
             if readchar.readkey() == "n":
@@ -216,6 +224,5 @@ def main(SlotList):
                     SlotList.append(Slot((k % 7), (k // 7), " ")) 
             else:
                 win_flag==2
-
 main(SlotList)
 
