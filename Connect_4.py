@@ -1,6 +1,6 @@
 #CONNECT 4
 #By Alexandros Tourloukis
-#June 24, 2023
+#June 24, 2024
 import os
 import readchar
 #SlotList gets read like this
